@@ -8,7 +8,9 @@ RUN  apt-get update && apt-get install -y \
 
 RUN   pip install --no-cache-dir nltk          && \
       pip install --no-cache-dir numpy         && \
-      pip install --no-cache-dir hcluster
+      pip install --no-cache-dir hcluster      && \
+      pip install --no-cache-dir scipy         && \
+      pip install --no-cache-dir sklearn
 
 RUN  wget --quiet "http://bonsai.hgc.jp/~mdehoon/software/cluster/Pycluster-1.52.tar.gz" && \
      tar -xzf Pycluster-1.52.tar.gz                                                      && \
@@ -24,7 +26,10 @@ RUN  wget --quiet "https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/pac
 
 WORKDIR /root
 
-# Code for O'reilly Hilary Mason: An Introduction to Machine Learning with Web Data'
+# Code for Hilary Mason: An Introduction to Machine Learning with Web Data
+# http://shop.oreilly.com/product/0636920017493.do
+# Code for Hilary Mason: Advanced Machine Learning
+# http://shop.oreilly.com/product/0636920025610.do
 RUN  git clone https://github.com/hmason/ml_class.git
 
 
