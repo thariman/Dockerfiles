@@ -6,11 +6,13 @@ RUN  apt-get update && apt-get install -y \
      wget \
      unzip
 
-RUN   pip install --no-cache-dir nltk          && \
-      pip install --no-cache-dir numpy         && \
-      pip install --no-cache-dir hcluster      && \
-      pip install --no-cache-dir scipy         && \
-      pip install --no-cache-dir sklearn
+RUN   pip install --no-cache-dir "nltk == 3.2.1"          && \
+      pip install --no-cache-dir "numpy == 1.11.1"        && \
+      pip install --no-cache-dir "hcluster == 0.2.0"      && \
+      pip install --no-cache-dir "scipy == 0.18.0"        && \
+      pip install --no-cache-dir "sklearn"                && \
+      pip install --no-cache-dir "pylab"                  && \
+      pip install --no-cache-dir "python-hashes"
 
 RUN  wget --quiet "http://bonsai.hgc.jp/~mdehoon/software/cluster/Pycluster-1.52.tar.gz" && \
      tar -xzf Pycluster-1.52.tar.gz                                                      && \
